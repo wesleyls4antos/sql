@@ -1,0 +1,33 @@
+CREATE TABLE curso (
+	cod_curso INTEGER,
+	nome VARCHAR (100),
+	sigla VARCHAR (5),
+	PRIMARY KEY (cod_curso)
+);
+CREATE TABLE disciplina(
+cod_disciplina INTEGER,
+nome VARCHAR(100),
+curso INTEGER,
+PRIMARY KEY (cod_disciplina),
+CONSTRAINT fk_curso FOREIGN KEY (curso) REFERENCES curso (cod_curso) ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+CREATE TABLE turma(
+cod_turma INTEGER,
+turno VARCHAR(5),
+localidade VARCHAR(5),
+disciplina INTEGER,
+PRIMARY KEY (cod_turma),
+CONSTRAINT fk_disciplina FOREIGN KEY (disciplina) REFERENCES disciplina (cod_disciplina) ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+CREATE TABLE aluno(
+matricula INTEGER,
+nome VARCHAR(100),
+cpf INTEGER,
+curso INTEGER,
+turma INTEGER,
+PRIMARY KEY (matricula),
+CONSTRAINT fk_curso1 FOREIGN KEY (curso) REFERENCES curso (cod_curso) ON UPDATE NO ACTION ON DELETE NO ACTION,
+CONSTRAINT fk_turma FOREIGN KEY (turma) REFERENCES turma (cod_turma) ON UPDATE NO ACTION ON DELETE NO ACTION
+);`wesley.rafael`
+
+ALTER TABLE disciplina DROP COLUMN curso;
