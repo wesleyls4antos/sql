@@ -30,4 +30,4 @@ CONSTRAINT fk_curso1 FOREIGN KEY (curso) REFERENCES curso (cod_curso) ON UPDATE 
 CONSTRAINT fk_turma FOREIGN KEY (turma) REFERENCES turma (cod_turma) ON UPDATE NO ACTION ON DELETE NO ACTION
 );`wesley.rafael`
 
-ALTER TABLE disciplina DROP COLUMN curso;
+ALTER TABLE disciplina DROP FOREIGN KEY fk_curso;
