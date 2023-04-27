@@ -173,3 +173,8 @@ VALUES
 	(16, '202300008', 10),
 	(17, '202300009', 9),
 	(18, '202300009', 10);			
+
+INSERT INTO curso (cod_curso, nome_curso, sigla)
+VALUES 
+		(6, 'Engenharia da Computação', 'EC'),
+		(7, 'Tecnologia em redes de computadores', 'TRC');
